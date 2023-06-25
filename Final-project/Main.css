@@ -1,0 +1,221 @@
+.navi {
+  background-color: #961949;
+}
+.title {
+  color: white;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 29px;
+  margin-right: 20px;
+}
+.navbaritem {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 23px;
+
+  color: #ffffff;
+}
+.login-signup {
+  margin-left: auto;
+  border-radius: 8px;
+  background-color: red;
+  border: #ffffff solid 0.5px;
+  color: white;
+  margin-left: 10px;
+}
+.button {
+  display: flex;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+.slider {
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  height: 400px;
+  margin: auto;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
+    0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.slider-controls {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  width: 200px;
+  text-align: center;
+  transform: translatex(-50%);
+  z-index: 1000;
+
+  list-style: none;
+  text-align: center;
+}
+
+.slider input[type="radio"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider-controls label {
+  display: inline-block;
+  border: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #212121;
+  transition: background-color 0.2s linear;
+}
+
+#btn-1:checked ~ .slider-controls label[for="btn-1"] {
+  background-color: #ff4081;
+}
+
+#btn-2:checked ~ .slider-controls label[for="btn-2"] {
+  background-color: #ff4081;
+}
+
+#btn-3:checked ~ .slider-controls label[for="btn-3"] {
+  background-color: #ff4081;
+}
+
+/* SLIDES */
+
+.slides {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+  transform: translatex(-100%);
+  transition: transform 250ms linear;
+}
+
+.slide-content {
+  width: 500px;
+  margin: 50px 0px 0px 100px;
+}
+
+.slide-title {
+  margin-bottom: 20px;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.slide-text {
+  font-size: 20px;
+  line-height: 1.5;
+  font-family: Roboto, sans-serif;
+  margin: 30px 0px 30px 5px;
+  width: 500px;
+}
+
+.slide-link {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
+  border-radius: 3px;
+  text-decoration: none;
+  margin: 20px 0px 0px 170px;
+  background-color: #ff4081;
+}
+
+.slide-image img {
+  max-width: 100%;
+  margin-right: 200px;
+}
+
+/* Slide animations */
+#btn-1:checked ~ .slides .slide:nth-child(1) {
+  transform: translatex(0);
+  opacity: 1;
+}
+
+#btn-2:checked ~ .slides .slide:nth-child(2) {
+  transform: translatex(0);
+  opacity: 1;
+}
+
+#btn-3:checked ~ .slides .slide:nth-child(3) {
+  transform: translatex(0);
+  opacity: 1;
+}
+
+#btn-1:not(:checked) ~ .slides .slide:nth-child(1) {
+  animation-name: swap-out;
+  animation-duration: 300ms;
+  animation-timing-function: linear;
+}
+
+#btn-2:not(:checked) ~ .slides .slide:nth-child(2) {
+  animation-name: swap-out;
+  animation-duration: 300ms;
+  animation-timing-function: linear;
+}
+
+#btn-3:not(:checked) ~ .slides .slide:nth-child(3) {
+  animation-name: swap-out;
+  animation-duration: 300ms;
+  animation-timing-function: linear;
+}
+
+@keyframes swap-out {
+  0% {
+    transform: translatex(0);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translatex(50%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translatex(100%);
+  }
+}
+li.slide:nth-child(1) {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("https://images.squarespace-cdn.com/content/v1/51ec572ce4b06aef3d50819c/1448987549068-8D2XKK5QJG5ZUFAYFAN4/image-asset.jpeg?format=2500w");
+}
+li.slide:nth-child(2) {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("https://cdn.wallpapersafari.com/31/90/8xnyvD.jpg");
+}
+li.slide:nth-child(3) {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("https://img.freepik.com/free-photo/beautiful-landscape-sea-sunset-sunrise-time_74190-14110.jpg");
+}
